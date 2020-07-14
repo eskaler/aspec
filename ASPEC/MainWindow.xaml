@@ -1,0 +1,13 @@
+﻿<Window x:Class="ASPEC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ASPEC"
+        mc:Ignorable="d"
+        Title="АСПЭК. Планирование" Height="768" Width="1366"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Frame Name="frMainFrame" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</Window>

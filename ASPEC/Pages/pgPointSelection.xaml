@@ -1,0 +1,55 @@
+﻿<Page x:Class="ASPEC.Pages.pgPointSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ASPEC.Pages"
+      xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="pgPointSelection">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".2*"/>
+            <ColumnDefinition Width=".8*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".05*"/>
+            <RowDefinition Height=".85*"/>
+            <RowDefinition Height=".1*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Место имзерения"/>
+        <TreeView Grid.Row="1" Grid.Column="0" 
+                  SelectedItemChanged="trvDeparts_SelectedItemChanged"
+                  Name="trvDeparts"/>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+            <Label Grid.Row="0" Grid.Column="1" Name="lblDepartInfo" Grid.ColumnSpan="2"/>
+            <Label Name="lblPointInfo"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1" 
+                      HorizontalScrollBarVisibility="Visible"
+                      >
+            <Grid>
+                <Canvas Name="svgCanvas" Grid.Row="1" Grid.Column="1" Background="Transparent"
+                Panel.ZIndex="1"/>
+                <svgc:SvgViewbox Name="svgViewBox" Stretch="Fill"
+                         Grid.Row="1" Grid.Column="1" Panel.ZIndex="0"/>
+            </Grid>
+            
+        </ScrollViewer>
+        
+        
+        
+        <Button Grid.Row="8" Grid.Column="0"
+                Name="btnAddPoint" Content="Добавить точку"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <Button Grid.Row="8" Grid.Column="1"
+                Name="btnChoosePoint" Content="Выбрать точку" Click="btnChoosePoint_Click" Width="200"/>
+        </StackPanel>
+        
+    </Grid>
+</Page>

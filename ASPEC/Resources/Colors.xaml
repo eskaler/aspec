@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ASPEC.Resources">
+
+
+    <SolidColorBrush x:Key="ScbMain1" Color="#003274"/>
+    <SolidColorBrush x:Key="ScbMain2" Color="#025ea1"/>
+    <SolidColorBrush x:Key="ScbMain3" Color="#4596d1"/>
+    
+    <SolidColorBrush x:Key="ScbGrey" Color="#191919"/>
+    
+    <SolidColorBrush x:Key="ScbBackground" Color="#f2f2f2"/>
+    <SolidColorBrush x:Key="ScbMainBackground" Color="#fdbc77"/>
+    
+    
+</ResourceDictionary>

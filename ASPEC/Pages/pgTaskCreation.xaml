@@ -1,0 +1,105 @@
+﻿<Page x:Class="ASPEC.Pages.pgTaskCreation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ASPEC.Pages"
+      xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="pgTaskCreation">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".05*"/>
+            <RowDefinition Height=".05*"/>
+            <RowDefinition Height=".05*"/>
+            <RowDefinition Height=".05*"/>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".3*"/>
+            <RowDefinition Height=".05*"/>
+
+
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="0"
+                Name="btnBack" Content="Назад" Click="btnBack_Click"
+                HorizontalAlignment="Left" Width="100"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                   Name="txbTaskName" Style="{StaticResource SubHeaderTextBlockStyle}"/>
+
+        
+        <Label Grid.Row="1" Grid.Column="0" Content="Тип излучения"/>
+        <ComboBox Grid.Row="1" Grid.Column="1"
+                  SelectedValuePath="Id"
+                  DisplayMemberPath="Name"
+                  SelectedIndex="0"
+                  Width="200"
+                  Name="cmbRadiationType"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Исполнитель"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" 
+                  SelectedValuePath="User.Id"
+                  DisplayMemberPath="User.Fio"
+                  SelectedIndex="0"
+                  Width="200"
+                  Name="cmbExecutor"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Место измерения"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="Выбрать"
+                Name="btnPointSelection" Click="btnPointSelection_Click"
+                HorizontalAlignment="Left" Width="100"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Name="lblPointInfo" Grid.ColumnSpan="2"/>
+        <Image Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+               Grid.RowSpan="2" Name="imgPoint" Stretch="Uniform"/>
+
+        <Label Grid.Row="0" Grid.Column="2" Content="Измерения"/>
+        <!--<Label Grid.Row="3" Grid.Column="4" Content="Новое измерение"/>-->
+        
+        
+        <Label Grid.Row="1" Grid.Column="2" Content="Единица измерения"/>
+        <ComboBox Grid.Row="1" Grid.Column="3" Name="cmbNewMeasurementUnit"
+                    DisplayMemberPath="Name"
+                    SelectedValuePath="Id"
+                    SelectedIndex="0"/>
+        
+        <Label Grid.Row="2" Grid.Column="2" Content="Измерительный прибор"/>
+        <ComboBox Grid.Row="2" Grid.Column="3" Name="cmbNewMeasurementDevice"
+                    DisplayMemberPath="Name"
+                    SelectedValuePath="Id"
+                    SelectedIndex="0"/>
+        <Button Grid.Row="3" Grid.Column="2" Content="Добавить измерение"
+            Name="btnAddMeasurement"
+                Click="btnAddMeasurement_Click"
+                 HorizontalAlignment="Left" Width="160"/>
+        <Button Grid.Row="3" Grid.Column="3" Content="Удалить измерение"
+                Click="btnRemoveMeasurement_Click"
+            Name="btnRemoveMeasurement"
+                 HorizontalAlignment="Left" Width="160"/>
+
+        <DataGrid Grid.Row="4" Grid.Column="2"
+                  Grid.RowSpan="2" Grid.ColumnSpan="2"
+                  AutoGenerateColumns="False"
+                  Name="dtgMeasurements">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ед. изм."
+                                    Binding="{Binding Path=Unit.Name}"/>
+                <DataGridTextColumn Header="Изм. прибор"
+                                    Binding="{Binding Path=Device.Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="8" Grid.Column="3" Content="Сохранить"
+                Name="btnSaveTask" Click="btnSaveTask_Click"
+                HorizontalAlignment="Right" Width="150"/>
+
+    </Grid>
+</Page>
